@@ -1,0 +1,291 @@
+body{
+    background-color: rgb(226, 226, 219);
+    font-family: "Times New Roman", Times, serif;
+
+}
+
+.page-header {
+    background-color: rgb(7, 96, 129);   
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    color: rgb(244, 243, 250);
+    font-size: 57px;
+    margin: 0;
+    
+}
+
+.h31{
+    text-align: center;
+    font-size: 23px;
+}
+
+.container1{
+    display: flex;
+    gap: 11px;
+    padding: 0 4px;
+}
+
+.col1{
+    width: 35%;
+    padding: 10px;
+    background-color: rgb(168, 218, 220);;
+    border-color: black;
+    border-width: 5px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(1, 7, 9, 0.822);
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column; /* stack input and error message */
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+  height: 14px; /* reserve space even if empty */
+}
+
+.buttonGroup{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px 10px;  
+    flex-wrap: wrap;  
+}
+
+.buttonGroup button{
+    padding: 14px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: rgb(7, 96, 129);
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.col2 {
+  width: 65%;
+  max-width: 65%;           /* Prevents it from going beyond 75% */
+  padding: 10px;
+  background-color: rgba(66, 152, 147, 0.641);
+  border:  black;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(1, 7, 9, 0.822);
+  resize: vertical;          /* Can only resize vertically */
+  word-wrap: break-word;     /* Breaks long words instead of expanding */
+  overflow-wrap: break-word; /* Alternative for modern browsers */
+  white-space: normal;       /* Ensures text wraps */
+}
+
+#previewText {
+  background-color: white;
+  border: 2px solid #9bb3b0; /* greenish border */
+  border-radius: 5px;
+  overflow: hidden; /* keeps corners clean */
+  padding: 10px;       /* remove padding so header can touch edges */
+}
+#previewText h3 {
+  border-bottom: 2px solid #333;   /* dark line under */
+  padding-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #222;
+}
+
+#previewText p,li {
+  margin: 4px 0;
+  line-height: 1.5;
+}
+
+.name{
+  font-size: 50px;
+  padding-right: 5px;
+}
+
+#resumeHeader {
+    background-color: #0b3d91; /* dark blue */
+    color: white;
+    padding: 45px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#resumeHeader h2 {
+    margin: 0;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#resumeHeader .contact-info {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    font-size: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#resumeHeader .contact-info .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* space between emoji and text */
+}
+
+.two-col .row2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.two-col .left {
+    font-weight: bold;
+    width: 30%;   /* adjust as needed */
+}
+
+.two-col .right {
+    width: 65%;
+}
+
+/* make box-sizing consistent so paddings don't break widths */
+* { box-sizing: border-box; }
+
+/* row layout: label | input/textarea (flexible) | remove button (fixed) */
+.row {
+  display: flex;
+  align-items: flex-start;   /* align label at top of textarea for nicer look */
+  gap: 10px;                 /* space between children */
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.row p {
+  width: 120px;
+  flex: 0 0 120px;
+  margin-top: 6px;
+  margin: 6px 0 0 0;
+}
+
+/* label is fixed width */
+.row label {
+  width: 120px;              /* adjust as needed */
+  flex: 0 0 120px;           /* don't grow or shrink */
+  margin-top: 6px;           /* aligns label vertically with textarea */
+}
+
+/* text fields take remaining space but are allowed to shrink */
+.row input[type="text"],
+.row input[type="email"],
+.row textarea {
+  flex: 1 1 auto;            /* grow and shrink as needed */
+  min-width: 0;              /* CRUCIAL: allows the field to shrink so the button stays visible */
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: none;          /* prevent forced max-widths */
+}
+
+/* textarea specifics */
+.row textarea {
+  height: auto;              /* allow JS auto-resize if you use it */
+  overflow: auto;
+  resize: none;              /* optional - if you don't want manual resize handle */
+}
+
+.row2 {
+  display: flex;
+  gap: 10px;
+}
+
+.row2 .left::after {
+  content: ":"; 
+  margin-right: 5px;
+}
+
+/* remove button fixed size and clearly visible */
+.remove-btn {
+  flex: 0 0 auto;            /* fixed, don't stretch */
+  align-self: center;        /* vertically centered relative to row */
+  padding: 6px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.remove-btn:hover {
+  background-color: #c82333;
+}
+
+.print-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #0b3d91;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+@media print {
+  #resumeHeader {
+    -webkit-print-color-adjust: exact !important; 
+    print-color-adjust: exact !important;
+    background-color: #0b3d91 !important; /* force blue */
+    color: white !important;
+  .fa-solid {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color: white !important; /* or keep white if header is dark */
+  }
+}
+  body * {
+    visibility: hidden; /* hide everything */
+  }
+  #previewText, #previewText * {
+    visibility: visible; /* only resume */
+  }
+  #previewText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  
+    margin: 0;
+    height: 97%;                
+    padding: 0.3cm;              /* space inside the box */
+    border: 1px solid black;   /* the rectangular box */
+    box-sizing: border-box; 
+  }
+
+  /* Avoid page breaks inside sections */
+  #previewText, #resumeHeader, #previewText h3, #previewText p, #previewText li {
+    page-break-inside: avoid;
+  }
+
+  @page {
+    size: A4;          /* standard resume size */
+    margin: 0;       /* nice margin around */
+  }
+}
+
